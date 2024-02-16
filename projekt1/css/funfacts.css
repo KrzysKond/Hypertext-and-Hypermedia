@@ -1,0 +1,39 @@
+
+h2 {
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+    color: #4F4543;
+    text-align: center;
+    font-size: 5vh;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    font-size: 3vh;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+ol li {
+    font-size: 3vh;
+    margin-bottom: 3vh;
+}
+
+.sources {
+    font-size: 4vh;
+    padding-top: 2vh;
+}

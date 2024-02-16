@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="travel-blog">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="authorType"/>
+                <xs:element name="gallery" type="galleryType"/>
+                <xs:element name="travels" type="travelsType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="authorType">
+        <xs:sequence>
+            <xs:element name="personalData" type="personalType"/>
+            <xs:element name="description" type="descriptionType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="personalType">
+        <xs:sequence>
+            <xs:element name="name" type="shortStringType"/>
+            <xs:element name="surname" type="shortStringType"/>
+            <xs:element name="age">
+                <xs:simpleType>
+                    <xs:restriction base="xs:int">
+                        <xs:pattern value="[0-9][0-9]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="galleryType">
+        <xs:sequence>
+            <xs:element ref="image" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="imagesCount" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+    <xs:element name="image">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element name="backgroundStory" type="longStringType"/>
+            <xs:element name="place" type="xs:string"/>
+            <xs:element name="people" type="stringList"/>
+            <xs:element name="photographer">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="shortStringType">
+                            <xs:attribute name="newFriend" type="xs:boolean"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+            <xs:attribute name="source" type="xs:anyURI" use="required"/>
+            <xs:attribute name="year" type="yearType"/>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="basicInfo">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element name="country" type="shortStringType"/>
+            <xs:element name="duration">
+                <xs:simpleType>
+                    <xs:union memberTypes="xs:string xs:int">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="dni"/>
+                                <xs:enumeration value="dzień"/>
+                                <xs:enumeration value="dnie"/>
+                                <xs:enumeration value="tydzień"/>
+                                <xs:enumeration value="tygodnie"/>
+                                <xs:enumeration value="tygodnia"/>
+                                <xs:enumeration value="miesiąc"/>
+                                <xs:enumeration value="miesiąca"/>
+                                <xs:enumeration value="miesiące"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:union>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="bestPlace" type="xs:string"/>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="experienceType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="wentAlone" type="xs:boolean"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="travelType">
+        <xs:sequence>
+            <xs:element ref="basicInfo"/>
+            <xs:element name="experience" type="experienceType"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="travelAttributes"/>
+    </xs:complexType>
+
+    <xs:simpleType name="longStringType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200"/>
+            <xs:minLength value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="shortStringType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="descriptionType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ageType">
+        <xs:restriction base="xs:int">
+            <xs:pattern value="[0-9][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name='stringList'>
+        <xs:list>
+            <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                    <xs:maxLength value='15'/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:list>
+    </xs:simpleType>
+
+    <xs:complexType name="travelsType">
+        <xs:sequence>
+            <xs:element name="travel" type="travelType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="travelscount" type="xs:integer"/>
+    </xs:complexType>
+
+    <xs:simpleType name="yearType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="2005"/>
+            <xs:maxInclusive value="2023"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:attributeGroup name="travelAttributes">
+        <xs:attribute name="isEU" type="xs:boolean"/>
+        <xs:attribute name="year" type="yearType">
+        </xs:attribute>
+    </xs:attributeGroup>
+</xs:schema>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/form.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <script src="../js/script.js"></script>
+        <title>Form page</title>
+    </head>
+    <body>
+        
+        <h1>Formularz</h1>
+        <nav>
+            <a id="menu-icon"  onclick="toggleMenu()">
+                <svg class ="menu-icon" viewBox="0 0 100 80" width="80" height="80">
+                    <rect width="100" height="20"></rect>
+                    <rect y="30" width="100" height="20"></rect>
+                    <rect y="60" width="100" height="20"></rect>
+                  </svg>
+            </a>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="doswiadczenia.html">Doświadczenia<span class="dropdown-indicator">▼</span></a>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="doswiadczenia.html#backpacking">Backpacking przez europę</a></li>
+                            <li><a href="doswiadczenia.html#work">Praca</a></li>
+                            <li><a href="doswiadczenia.html#france">Podroż przez Francję</a></li>
+                            <li><a href="doswiadczenia.html#sweden">Wyjazd do Szwecji</a></li>
+                        </ul>
+                    </div>
+                <li><a href ="ciekawostki.html">Ciekawostki</a></li>
+                <li><a href="form.html">Formularz</a></li>
+            </ul>
+        </nav>
+        <div class="wrapper">
+        <div>
+            <h2>Twoje Podróże</h2>
+            <p>
+                Opowiedz mi w krótkim formularzu o twojej najlepszej podróży
+            </p>
+        </div>
+        <form>
+            <br>
+            <label>Płeć : </label>
+            <input type="radio" id="Man" name="sex" value="Man">
+            <label for="Man">Mężczyzna</label>
+            <input type="radio" id="Woman" name="sex" value="Woman">
+            <label for="Woman">Kobieta</label>
+            <br>   
+            <label for="lname">Kraj Podróży:</label>
+            <input type="text" id="lname" name="lname">
+            <br> 
+            <label for="year">Liczba osób, które wzięły udział w podróży :</label>
+            <select name="year" id="year">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="4">5+</option>
+            </select>        
+            <br>
+            <label for="start">Data Rozpoczęcia podróży:</label>
+            <input type="date" id="start" name="start">
+            <br> 
+            <label for="end">Data zakończenia podróży:</label>
+            <input type="date" id="end" name="end">
+            <br>  
+            <label>Ocena podróży :</label>
+        
+                <div class="range">
+                <input type="range" value="5" min="1" max="10" oninput="rangeValue.innerText = this.value">
+                <p id="rangeValue">5</p>
+            </div>
+            <br>
+            <label for="opinion">Opis podróży</label>
+            <br>
+            <textarea class = "text-area" id="opinion" name="opinion" rows="30" cols="150">
+            </textarea>
+            <br>
+            <div class="row">
+                
+                <input type="button" class="button-send" id="submit-button" value="Wyślij" >
+
+ 
+        <input type="reset" class="button-clear" id="clear-button" value="Clear" onclick="resetRangeInput()" >
+        </div>
+            </form>
+        </div>
+        <div class="footer">
+            <p>&copy; Krzysztof Kondracki 197810</p>
+        </div>
+</body>
+</html>

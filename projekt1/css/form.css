@@ -1,0 +1,63 @@
+
+.range input {
+    margin-top: 10px;
+} 
+p{
+    margin-left: 10px;
+}
+
+.submit {
+    fill: #008CBA;
+    stroke: #005F77;
+    stroke-width: 2;
+    opacity: 0.7
+}
+
+.submit-text {
+    font-size: 20px;
+    fill: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.clear {
+    fill: #f41e49;
+    stroke: #65090d;
+    stroke-width: 2;
+    opacity: 0.7
+
+}
+
+.clear-text {
+    font-size: 20px;
+    fill: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button-send {
+    padding: 20px 40px;
+    border: none;
+    border-radius: 15px;
+    background-color: #0074d9;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+.button-clear {
+    padding: 20px 40px;
+    border: none;
+    border-radius: 15px;
+    background-color: #f41e49;
+    cursor: pointer;
+    font-size:20px; 
+    color: white;
+  }
+  .text-area{
+    width: 100%;
+    max-width: 100%;
+  }
+  label, input, select, textarea {
+    margin-bottom: 15px;
+}

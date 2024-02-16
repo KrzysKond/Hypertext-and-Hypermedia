@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE travel-blog SYSTEM "travel.dtd">
+<travel-blog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="travelSchema.xsd">
+   <author>
+      <personalData>
+         <name>Krzysztof</name>
+         <surname>Kondracki</surname>
+          <age>18</age>
+      </personalData>
+      <description>
+         Nazywam się Krzysztof Kondracki. Kocham podróże, poznawanie innych kultur.
+      </description>
+   </author>
+
+   <gallery imagesCount ="6">
+       <image source = "gal1.jpeg" year ="2022">
+           <backgroundStory>Pierwsza podróż ze znajomymi za granicę, dzień pierwszy</backgroundStory>
+           <place>Katedra w Peterboroug</place>
+           <people>Krzysztof, Paskal</people>
+           <photographer newFriend="false">Maciej</photographer>
+       </image>
+
+      <image source = "gal2.jpg" year ="2023">
+         <backgroundStory>Samodzielna podróż przez Austrię, Słowację i Węgry. Zdjęcie z nowopoznanymi włochami, z którymi wspólnie zwiedzaliśmy Wiedeń</backgroundStory>
+         <place>Stephansplatz</place>
+         <people>Krzysztof, Enrico, Paolo</people>
+         <photographer newFriend="false">Przechodzień</photographer>
+      </image>
+   
+      <image source = "gal3.jpeg" year ="2022">
+         <backgroundStory>Ostatni dzień w Londynie w trakcie naszej pierwszej wspólnej zagraniczenj podróży bez rodziców</backgroundStory>
+         <place>Wembley Stadium</place>
+         <people>Krzysztof, Paskal, Maciej</people>
+         <photographer newFriend="false">Pracownik muzeum stadionu</photographer>
+      </image> 
+
+      <image source = "gal4.jpg" year ="2023">
+         <backgroundStory>Zwiedzanie Budapesztu razem z Amerykanami podczas silnego wiatru</backgroundStory>
+         <place>Parlament w Budapeszcie</place>
+         <people>Krzysztof</people>
+         <photographer newFriend="true">Michael</photographer>
+      </image>
+
+      <image source = "gal5.jpg" year ="2023">
+        <backgroundStory>Zwiedzanie połudnai Francji po dwóch tygodniach pracy w winnicy</backgroundStory>
+        <place>Vieux Port, Marseille</place>
+        <people>Brak</people>
+         <photographer newFriend="false">Krzysztof</photographer>
+      </image>
+
+     <image source = "gal6.jpg" year ="2023">
+       <backgroundStory>Pierwszy dzień podróży przez Austrię, zwiedzanie miasta razem z Włoszkami i Austriakiem</backgroundStory>
+       <place>Belvedere, Wiedeń</place>
+       <people>Krzysztof</people>
+       <photographer newFriend="true">Giullia</photographer>
+      </image>
+   </gallery>
+
+   <travels travelscount = "5">
+      <travel isEU="false" year ="2022">
+         <basicInfo>
+            <country>Wielka Brytania</country>
+            <duration>6 dni</duration>
+            <bestPlace>Londyn</bestPlace>
+         </basicInfo>
+         <experience wentAlone ="false">
+             Wspaniałe doświadczenie pierwszego wyjazdu bez opieki rodziców razem ze znajomymi w majówkę.
+             Niesamowite poznanie kultury brytyjskiej, a także zwiedzanie muzeów
+         </experience>
+      </travel>
+
+      <travel isEU="true" year ="2023">
+         <basicInfo>
+            <country>Austria, Słowacja, Węgry</country>
+            <duration>9 dni</duration>
+            <bestPlace>Wiedeń</bestPlace>
+         </basicInfo>
+      <experience wentAlone ="true">
+        Pierwszy wyjazd kompletnie samemu. 
+        Poznawanie lokalnych kultur i języków.
+        Poznawanie podróżników z innych krajów Europy i wspólne zwiedzanie
+      </experience>
+   </travel>
+
+      <travel isEU="true" year ="2023">
+         <basicInfo>
+            <country>Szwecja</country>
+            <duration>2 dni</duration>
+            <bestPlace>Vasamuseet, Sztokholm</bestPlace>
+         </basicInfo>
+         <experience wentAlone ="false">
+            Dwudniowa wycieczka z bratem do Sztokholmu, 
+            ucieczka od codzienności po ciężkim roku szkolnym. 
+            Poznawanie Szweckiej kultury i zwyczajów.
+         </experience>
+      </travel>
+      
+      <travel isEU="true" year ="2023">
+       <basicInfo>
+            <country>Francja</country>
+            <duration>2 tygodnie</duration>
+            <bestPlace>Cercie, Beaujolais</bestPlace>
+       </basicInfo>
+       <experience wentAlone ="true">
+          Praca we Francji przy zbiorach winogron.
+          Praca w winnicy przy przeróbce wina.
+       </experience>
+      </travel>
+
+    <travel isEU="true" year ="2023">
+       <basicInfo>
+          <country>Francja</country>
+          <duration>9 dni</duration>
+          <bestPlace>Parc National des Calanques</bestPlace>
+       </basicInfo>
+         <experience wentAlone ="true">
+           Zwiedzanie południa Francji po dwóch tygodniach pracy we Francji.
+           Imprezowanie z Francuzami z lokalnych uniwersytetów
+         </experience>
+      </travel>
+   </travels>
+</travel-blog>

@@ -1,0 +1,40 @@
+<!ELEMENT travel-blog (author, gallery, travels )>
+
+        <!ELEMENT author (personalData, description)>
+        <!ELEMENT personalData (name, surname, age)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT surname (#PCDATA)>
+        <!ELEMENT age (#PCDATA)>
+
+        <!ELEMENT description (#PCDATA)>
+
+        <!ELEMENT gallery (image+)>
+        <!ATTLIST gallery imagesCount CDATA #REQUIRED>
+
+        <!ELEMENT image (backgroundStory, place, people, photographer)>
+        <!ATTLIST image source CDATA #REQUIRED
+                year CDATA #IMPLIED>
+        <!ELEMENT backgroundStory (#PCDATA)>
+        <!ELEMENT place (#PCDATA)>
+        <!ELEMENT people (#PCDATA)>
+        <!ELEMENT photographer (#PCDATA)>
+        <!ATTLIST photographer newFriend (true | false) "false">
+
+        <!ELEMENT travels (travel+)>
+        <!ATTLIST travels travelscount CDATA #IMPLIED>
+
+        <!ELEMENT travel (basicInfo, experience)>
+        <!ATTLIST travel isEU (true | false) #IMPLIED
+                year CDATA #IMPLIED>
+
+        <!ELEMENT basicInfo (country, duration, bestPlace)>
+        <!ELEMENT country (#PCDATA)>
+        <!ELEMENT duration (#PCDATA)>
+        <!ELEMENT bestPlace (#PCDATA)>
+
+        <!ELEMENT experience (#PCDATA)>
+        <!ATTLIST experience wentAlone (true | false) #IMPLIED>
+
+        <!ATTLIST travel-blog
+                xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation CDATA #REQUIRED>
